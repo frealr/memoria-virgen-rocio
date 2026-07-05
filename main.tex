@@ -15,63 +15,37 @@
             headheight=15pt,
             footskip=1.5cm]{geometry}
 
-% --- Colores Personalizados ---
-\usepackage{xcolor}
-\definecolor{primarycolor}{HTML}{0D5C75}     % Azul institucional/médico
-\definecolor{secondarycolor}{HTML}{1985A1}   % Azul secundario
-\definecolor{darkcolor}{HTML}{2C3E50}        % Gris oscuro para texto
-\definecolor{lightgray}{HTML}{F8F9FA}       % Fondo para tablas o cajas
+% --- Cabeceras y Pies de Página (Idéntico al original) ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Memoria Técnica -- Cafeterías y Vending}
+\fancyhead[R]{Repostería Barroso Iglesias, SL}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
 
 % --- Gráficos y Tablas ---
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{caption}
-\captionsetetup{labelfont={color=primarycolor,bf},textfont=it}
 
 % --- Matemáticas y Símbolos ---
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-% --- Cabeceras y Pies de Página ---
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\textcolor{primarycolor}{\small\sffamily HU Virgen del Rocío -- HU San Lázaro}}
-\fancyhead[R]{\textcolor{gray}{\small\sffamily Memoria de Adecuación}}
-\fancyfoot[C]{\textcolor{darkcolor}{\thepage}}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0pt}
-% Colorear la línea de la cabecera
-\makeatletter
-\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
-\color{primarycolor}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
-\makeatother
-
-% --- Hipervínculos ---
+% --- Hipervínculos (Enlaces limpios e interactivos) ---
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=primarycolor,
-    filecolor=secondarycolor,      
-    urlcolor=secondarycolor,
-    citecolor=primarycolor,
-    pdftitle={Memoria Técnica de Adecuación - Cafeterías y Vending},
+    linkcolor=black,       
+    filecolor=black,
+    urlcolor=blue,         % Enlaces en azul estándar para que se identifiquen bien
+    citecolor=black,
+    pdftitle={Memoria Técnica de Adecuación},
     pdfauthor={Repostería Barroso Iglesias, SL},
-    pdfpagemode=FullScreen,
 }
-
-% --- Formato de Títulos (Secciones) ---
-\usepackage{titlesec}
-\titleformat{\section}
-  {\color{primarycolor}\normalfont\Large\bfseries\sffamily}
-  {\thesection}{1em}{}
-\titleformat{\subsection}
-  {\color{secondarycolor}\normalfont\large\bfseries\sffamily}
-  {\thesubsection}{1em}{}
-\titleformat{\subsubsection}
-  {\color{darkcolor}\normalfont\normalsize\bfseries\sffamily}
-  {\thesubsubsection}{1em}{}
 
 % --- Ajustes de Párrafos y Espaciado ---
 \usepackage{microtype}
@@ -79,7 +53,7 @@
 \setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
 \renewcommand{\baselinestretch}{1.15}
 
-% --- Documento ---
+% --- Inicio del Documento ---
 \begin{document}
 
 % Portada
@@ -90,11 +64,6 @@
 \pagenumbering{roman}
 \tableofcontents
 \newpage
-
-% Listas de figuras y tablas (opcional, descomentar si se necesitan)
-%\listoffigures
-%\listoftables
-%\newpage
 
 \pagenumbering{arabic}
 
