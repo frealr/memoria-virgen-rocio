@@ -1,0 +1,21 @@
+# Ficheros auxiliares de compilación de LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.toc
+*.out
+*.synctex.gz
+*.pdf
+*.blg
+*.bbl
+*.lof
+*.lot
+*.run.xml
+*-blx.bib
+
+# Ficheros de sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

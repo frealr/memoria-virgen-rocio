@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper,oneside]{article}
+
+% --- Paquetes Básicos ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{lmodern}
+
+% --- Diseño de Página (Márgenes) ---
+\usepackage[a4paper,
+            top=3cm,
+            bottom=3cm,
+            left=2.5cm,
+            right=2.5cm,
+            headheight=15pt,
+            footskip=1.5cm]{geometry}
+
+% --- Colores Personalizados ---
+\usepackage{xcolor}
+\definecolor{primarycolor}{HTML}{0D5C75}     % Azul institucional/médico
+\definecolor{secondarycolor}{HTML}{1985A1}   % Azul secundario
+\definecolor{darkcolor}{HTML}{2C3E50}        % Gris oscuro para texto
+\definecolor{lightgray}{HTML}{F8F9FA}       % Fondo para tablas o cajas
+
+% --- Gráficos y Tablas ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{caption}
+\captionsetetup{labelfont={color=primarycolor,bf},textfont=it}
+
+% --- Matemáticas y Símbolos ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% --- Cabeceras y Pies de Página ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{primarycolor}{\small\sffamily HU Virgen del Rocío -- HU San Lázaro}}
+\fancyhead[R]{\textcolor{gray}{\small\sffamily Memoria de Adecuación}}
+\fancyfoot[C]{\textcolor{darkcolor}{\thepage}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+% Colorear la línea de la cabecera
+\makeatletter
+\def\headrule{{\if@fancyplain\let\headrulewidth\plainheadrulewidth\fi
+\color{primarycolor}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+\makeatother
+
+% --- Hipervínculos ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primarycolor,
+    filecolor=secondarycolor,      
+    urlcolor=secondarycolor,
+    citecolor=primarycolor,
+    pdftitle={Memoria Técnica de Adecuación - Cafeterías y Vending},
+    pdfauthor={Repostería Barroso Iglesias, SL},
+    pdfpagemode=FullScreen,
+}
+
+% --- Formato de Títulos (Secciones) ---
+\usepackage{titlesec}
+\titleformat{\section}
+  {\color{primarycolor}\normalfont\Large\bfseries\sffamily}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\color{secondarycolor}\normalfont\large\bfseries\sffamily}
+  {\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\color{darkcolor}\normalfont\normalsize\bfseries\sffamily}
+  {\thesubsubsection}{1em}{}
+
+% --- Ajustes de Párrafos y Espaciado ---
+\usepackage{microtype}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5ex plus 0.5ex minus 0.2ex}
+\renewcommand{\baselinestretch}{1.15}
+
+% --- Documento ---
+\begin{document}
+
+% Portada
+\input{portada}
+\newpage
+
+% Índice general
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+% Listas de figuras y tablas (opcional, descomentar si se necesitan)
+%\listoffigures
+%\listoftables
+%\newpage
+
+\pagenumbering{arabic}
+
+% Secciones del Documento
+\input{secciones/01_introduccion}
+\newpage
+
+\input{secciones/02_descripcion}
+\newpage
+
+\input{secciones/03_adecuacion}
+\newpage
+
+% Bibliografía
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}
